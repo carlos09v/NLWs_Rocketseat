@@ -1,0 +1,36 @@
+        # 12_NLW-Spacetime de 2023
+			# Projeto realizado de 15 a 19 de maio
+				* Trilha Ignite *
+
+-- Aula 1 - Setup dos projetos
+	- Setup do mobile
+	1. Expo (Guia de Instalação)
+	2. NativeWind
+	3. ESLint + Prettier Tailwind
+
+-- Aula 2 - Layout & back-end
+	- Configuração da fonte
+	- Blur background
+	- Stripes
+	- Seção Hero
+	- Copyright
+
+-- Aula 3 - Autenticação & Upload
+	1. Instalação do expo-auth-session
+	2. Configuração GitHub OAuth (Expo)
+	3. Salvando token no secure store
+	4. Navegando usuário
+	5. Utilizando Expo Router
+
+-- Aula 4 - Upload & Nova memória
+	1. Definindo layout das rotas
+	2. Personalizando rota inicial do app
+	3. Página de nova memória
+
+-- Aula 5 - Criação e listagem
+	1. Selecionando imagem da galeria
+	2. Preview da imagem
+	3. Criando nova memória
+	4. Layout da listagem
+	5. Botão de logout
+	6. Buscando memórias da API

@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.1.7",
+    "dotenv": "^16.0.3",
+    "prisma": "^4.14.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.1",
+    "@fastify/jwt": "^6.7.1",
+    "@fastify/multipart": "^7.6.0",
+    "@fastify/static": "^6.10.1",
+    "@prisma/client": "^4.14.0",
+    "axios": "^1.4.0",
+    "fastify": "^4.17.0",
+    "zod": "^3.21.4"
+  },
+  "_commands": {
+    "0": "npm init -y",
+    "1": "npm i typescript @types/node tsx prisma -D",
+    "2": "tsc --init",
+    "3": "npm i fastify @fastify/cors @fastify/jwt @prisma/client zod axios",
+    "4": "npx prisma init --datasource-provider SQLite",
+    "5": "npx prisma migrate dev",
+    "6": "npm i dotenv -D",
+    "7": "npm i @fastify/multipart @fastify/static"
+  },
+  "_comments": {
+    "7": "@fastify/static => Fazer uma pasta ficar publica, pra ser acessada; @fastify/multipart => habilita o fastify a entender multipart formData (envio de qualquer dado, arquivo)"
+  }
+}
