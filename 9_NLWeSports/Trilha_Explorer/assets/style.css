@@ -59,6 +59,14 @@ header img {
     width: 100%;
 }
 
+header > span#version {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    color: red;
+}
+
 /* -------------   */
 
 main {
