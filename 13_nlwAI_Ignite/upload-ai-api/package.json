@@ -1,0 +1,46 @@
+{
+  "name": "upload-ai-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "dotenv": "^16.3.1",
+    "prisma": "^5.3.0",
+    "tsx": "^3.12.10",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/multipart": "^7.7.3",
+    "@prisma/client": "^5.3.0",
+    "ai": "^2.2.12",
+    "fastify": "^4.23.1",
+    "openai": "^4.6.0",
+    "zod": "^3.22.2"
+  },
+  "_commands": {
+    "0": "npm i typescript @types/node tsx prisma -D",
+    "1": "npm i fastify @prisma/client",
+    "2": "npx prisma init --datasource-provider sqlite",
+    "3": "npm i @fastify/multipart zod @fastify/cors",
+    "4": "npm i openai",
+    "5": "npm i dotenv -D",
+    "6": "npm i ai"
+  },
+  "_comments": {
+    "3": "Fastify plugin to parse the multipart content-type.",
+    "4": "Conectar a api da OpenAI",
+    "5": "Ler variaveis ambiente (.env)",
+    "6": "AI (Vercel) => Retorna a resposta da AI aos poucos."
+  }
+}

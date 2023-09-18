@@ -1,0 +1,15 @@
+            # 13_NLW-AI de 2023
+    # Projeto realizado de 11 a 14 de setembro
+            * Trilha Mastery *
+        Obs: Made by me
+
+-- Aula 02 - Avançando o back-end da aplicação
+        -- Instalação das Libs
+        1. TypeScript
+        2. Fastify
+        3. Prisma
+                3.1. Create Video and Prompt Models
+        4. Zod
+        5. OpenAI (Connect)
+        6. Routes...
+

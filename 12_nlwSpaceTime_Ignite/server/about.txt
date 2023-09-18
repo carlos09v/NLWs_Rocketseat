@@ -1,0 +1,29 @@
+        # 12_NLW-Spacetime de 2023
+			# Projeto realizado de 15 a 19 de maio
+				* Trilha Ignite *
+
+-- Aula 1 - Setup dos projetos
+	- Setup do back-end
+	1. NodeJS
+	2. TypeScript + TSX
+	3. Fastify (Framework)
+	4. ESLint
+	5. Prisma + SQLite
+
+-- Aula 2 - Layout & back-end
+	1. Estrutura de banco de dados
+	2. CRUD de memórias
+		2.1. Criação
+		2.2. Listagem
+		2.3. Detalhe
+		2.4. Atualização
+	3. Plugin de CORS
+
+-- Aula 3 - Autenticação & Upload
+	1. Rota de autenticação
+	2. Criação do token JWT
+	3. Rotas autenticadas
+
+-- Aula 4 - Upload & Nova memória
+	1. Rota de upload de arquivos
+	2. Servindo arquivos estáticos

@@ -1,0 +1,42 @@
+        # 12_NLW-Spacetime de 2023
+			# Projeto realizado de 15 a 19 de maio
+				* Trilha Ignite *
+
+-- Aula 1 - Setup dos projetos
+	- Setup do front-end (React, Next.js, Tailwind)
+	1. React + NextJS
+	2. Conceitos
+		2.1. Componentes
+		2.2. Propriedades
+		2.3. Roteamento (do Next)
+	3. TailwindCSS
+	4. ESLint + Prettier Tailwind
+
+-- Aula 2 - Layout & back-end
+	1. Configuração da fonte
+	2. Estrutura visual da Home
+		2.1. Blur background
+		2.2. Stripes
+	3. Lista de memórias vazia
+	4. Perfil do usuário
+	5. Seção Hero
+	6. Copyright
+
+-- Aula 3 - Autenticação & Upload
+	1. Fluxo de autenticação
+	2. Configuração GutHub OAuth
+	3. Obtendo GitHub code web
+	4. Salvando o token nos cookies
+	5. Exibindo perfil do usuário
+
+-- Aula 4 - Upload & Nova memória
+	1. Definindo layout das rotas
+	2. Rota de logout
+	3. Página de nova memória
+	4. Middleware de autenticação
+
+-- Aula 5 - Criação e listagem
+	1. Preview da midia
+	2. Criando nova memoria
+	3. Layout da listagem
+	4. Buscando memórias da API
