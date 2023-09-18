@@ -1,4 +1,4 @@
-<h2>- NLWs da <a href="www.rocketseat.com.br">Rocketseat 🚀</a> realizadas:</h2>
+<h2>- NLWs da <a href="https://www.rocketseat.com.br">Rocketseat 🚀</a> realizadas:</h2>
 <ul>
     <li>
         <a href='https://github.com/carlos09v/NLWs_Rocketseat/tree/main/13_nlwAI_Ignite' target="_self" rel="next">
