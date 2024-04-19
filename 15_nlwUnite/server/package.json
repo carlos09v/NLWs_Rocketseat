@@ -1,0 +1,48 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "build": "tsup src --format esm",
+    "start": "node dist/server.js",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "prisma": "^5.12.1",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^3.0.0",
+    "@prisma/client": "^5.12.1",
+    "fastify": "^4.26.2",
+    "fastify-type-provider-zod": "^1.1.9",
+    "zod": "^3.22.4"
+  },
+  "_commands": {
+    "0": "npm init -y",
+    "1": "npm i typescript @types/node tsx prisma tsup -D",
+    "2": "npx tsc --init",
+    "3": "npm i fastify zod",
+    "4": "npx prisma init --datasource-provider SQLite",
+    "5": "npx prisma migrate dev",
+    "6": "npm i fastify-type-provider-zod @fastify/swagger @fastify/swagger-ui @fastify/cors",
+    "7": "npx prisma db seed"
+  },
+  "_comments": {
+    "6": "@fastify/swagger => cria a documentação ; @fastify/swagger-ui => cria interface pra navegar"
+  }
+}
