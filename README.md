@@ -1,15 +1,20 @@
 <h2>- NLWs da <a href="https://www.rocketseat.com.br">Rocketseat 🚀</a> realizadas:</h2>
 <ul>
     <li>
+        <a href='https://github.com/carlos09v/NLWs_Rocketseat/tree/main/16_nlwJourney' target="_self" rel="next">
+            #16 - NLW Journey
+        </a>(Trilha NodeJS e ReactJS)
+        <i>(-> Mais recente)</i>
+    </li>
+    <li>
         <a href='https://github.com/carlos09v/NLWs_Rocketseat/tree/main/15_nlwUnite' target="_self" rel="next">
-            #15 - NLW Unite (Trilha NodeJS)
-        </a>
-        <i>(Mais recente)</i>
+            #15 - NLW Unite
+        </a>(Trilha NodeJS)
     </li>
     <li>
         <a href='https://github.com/carlos09v/NLWs_Rocketseat/tree/main/14_nlwExpert' target="_self" rel="next">
-            #14 - NLW Expert (Trilha React & Node)
-        </a>
+            #14 - NLW Expert
+        </a>(Trilha React & Node)
     </li>
     <li>
         <a href='https://github.com/carlos09v/NLWs_Rocketseat/tree/main/13_nlwAI_Ignite' target="_self" rel="next">

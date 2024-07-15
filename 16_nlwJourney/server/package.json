@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/nodemailer": "^6.4.15",
+    "prisma": "^5.16.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "_commands": {
+    "0": "npm init -y",
+    "1": "npm i typescript @types/node tsx prisma -D",
+    "2": "tsc --init",
+    "3": "npm i fastify zod fastify-type-provider-zod @fastify/cors",
+    "4": "npx prisma init --datasource-provider SQLite",
+    "5": "npx prisma migrate dev",
+    "6": "npm i nodemailer",
+    "7": "npm i @types/nodemailer -D"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.16.2",
+    "dayjs": "^1.11.11",
+    "fastify": "^4.28.1",
+    "fastify-type-provider-zod": "^2.0.0",
+    "nodemailer": "^6.9.14",
+    "zod": "^3.23.8"
+  }
+}
