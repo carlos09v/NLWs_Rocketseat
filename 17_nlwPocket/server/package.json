@@ -1,0 +1,60 @@
+{
+  "name": "17_pocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/http/server.ts",
+    "seed": "tsx --env-file .env src/db/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/node": "^22.5.4",
+    "drizzle-kit": "^0.24.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2"
+  },
+  "_commands": {
+    "0": "npm init -y",
+    "1": "npm i typescript @types/node tsx -D",
+    "2": "npx tsc --init",
+    "3": "tsc --init",
+    "4": "npm i fastify zod fastify-type-provider-zod dayjs @fastify/cors",
+    "5": "npm i -D --save-exact @biomejs/biome",
+    "12": "npm i postgres",
+    "15": "npm i @paralleldrive/cuid2",
+    "_drizzleORM": {
+      "9": "npm i drizzle-orm",
+      "10": "npm i drizzle-kit -D",
+      "11": "npx drizzle-kit generate",
+      "13": "npx drizzle-kit migrate",
+      "14": "npx drizzle-kit studio"
+    },
+    "_docker": {
+      "6": "docker compose up -D",
+      "7": "docker ps -a",
+      "8": "docker logs [containerId]"
+    }
+  },
+  "_comments": {
+    "3": "https://github.com/tsconfig/bases",
+    "5": "Formatador de codigo. Tipo eslint",
+    "6": "subir o container a partir do docker-compose",
+    "7": "ver a lista de containers e pegar o id do que acabou de subir",
+    "8": "ver se os logs do container está ok",
+    "15": "cria id único (cuid2)"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "dayjs": "^1.11.13",
+    "drizzle-orm": "^0.33.0",
+    "fastify": "^4.28.1",
+    "fastify-type-provider-zod": "^2.0.0",
+    "postgres": "^3.4.4",
+    "zod": "^3.23.8"
+  }
+}
