@@ -1,6 +1,6 @@
 <h1>NLW Unite</h1>
 <div align='center'>
-    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/15_nlwUnite/server/src/assets/cover.jpg?raw=true" alt="NLW_Unite_Preview">
+    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/15_nlwUnite/server/src/assets/cover.jpg?raw=true" alt="NLW_Unite_Preview">
 </div>
 
 <h2>Trilha NodeJS - NLW Unite - Rocketseat</h2>

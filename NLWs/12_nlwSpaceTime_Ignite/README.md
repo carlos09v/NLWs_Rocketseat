@@ -1,7 +1,7 @@
 <h1>NLW SpaceTime</h1>
 <div align='center'>
     <h3>- Veja o projeto no <a href='https://www.figma.com/file/G8PUN4pJqzxEzxPNd7eP5z/C%C3%A1psula-do-tempo-%E2%80%A2-Trilha-Ignite-(Community)?type=design&node-id=205-3&t=7bhiHbk0QWYK3QZT-0'>Figma 🔖</a> </h3>
-    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/12_nlwSpaceTime_Ignite/web/src/assets/spacetime.png?raw=true" alt="NLW_SpaceTime_Capa">
+    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/12_nlwSpaceTime_Ignite/web/src/assets/spacetime.png?raw=true" alt="NLW_SpaceTime_Capa">
 </div>
 
 <h2>Trilha Ignite - NLW SpaceTime - Rocketseat</h2>

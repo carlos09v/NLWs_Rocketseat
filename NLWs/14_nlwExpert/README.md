@@ -1,6 +1,6 @@
 <h1>NLW Expert (React)</h1>
 <div align='center'>
-    <img height='300' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/14_nlwExpert/react_notes/src/assets/cover.png?raw=true" alt="NLW_Expert_ReactCover">
+    <img height='300' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/14_nlwExpert/react_notes/src/assets/cover.png?raw=true" alt="NLW_Expert_ReactCover">
 </div>
 <h2>Sobre o projeto:</h2>
 <p>Essa aplicação foi desenvolvida durante o NLW Experts da Rocketseat utilizando React, TypeScript, Tailwind e a SpeechRecognition API.</p>
@@ -10,7 +10,7 @@
 
 <h1>NLW Expert (Node.js)</h1>
 <div align='center'>
-    <img height='300' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/14_nlwExpert/node_polls/src/assets/cover.png?raw=true" alt="NLW_Expert_NodeCover">
+    <img height='300' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/14_nlwExpert/node_polls/src/assets/cover.png?raw=true" alt="NLW_Expert_NodeCover">
 </div>
 <h2>Sobre o projeto:</h2>
 <p>A real-time voting system where users can create a poll and other users can cast their votes. The system generates a ranking among the options and updates the votes in real-time.</p>

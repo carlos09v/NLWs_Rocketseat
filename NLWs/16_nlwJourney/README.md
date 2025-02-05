@@ -1,6 +1,6 @@
 <h1>NLW Journey</h1>
 <div align='center'>
-    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/16_nlwJourney/web/src/assets/cover.png?raw=true" alt="NLW_Journey_Preview">
+    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/16_nlwJourney/web/src/assets/cover.png?raw=true" alt="NLW_Journey_Preview">
 </div>
 
 <h2>Trilha NodeJS e ReactJS - NLW Journey - Rocketseat</h2>
