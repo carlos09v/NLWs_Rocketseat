@@ -14,7 +14,7 @@ O sistema fará um scan da credencial do participante para permitir a entrada no
 
 <h3>Instrutores: <a href='https://github.com/diego3g'>Diego Fernandes</a></h3>
 
-<h2>Sobre o projeto:</h2>
+<h2>Dependências e Tecnologias:</h2>
 <h3>💜 TypeScript - NodeJS - Prisma - Fastify - SQLite 💜</h3>
 <p>- Veja o projeto no <a href='https://www.figma.com/community/file/1356738933008624188'>Figma 🔖</a> </p>
 <i>Projeto realizado de 27 a 31 de março - 2024</i>

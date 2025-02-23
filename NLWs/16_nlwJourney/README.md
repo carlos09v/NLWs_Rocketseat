@@ -10,7 +10,7 @@ Esse é um dos projetos do evento NLW Journey, um dos conteúdos disponíveis pa
 
 <h3>Instrutores: <a href='https://github.com/diego3g'>Diego Fernandes</a></h3>
 
-<h2>Sobre o projeto:</h2>
+<h2>Dependências e Tecnologias:</h2>
 <h3>💚 TypeScript - NodeJS - Prisma - Fastify - SQLite - Nodemailer 💚</h3>
 <h3>💙 ReactJS - Typescript - Tailwindcss - React-router-dom 💙</h3>
 <p>- Veja o projeto no <a href='https://www.figma.com/community/file/1392276515495389646/nlw-journey-planejador-de-viagem'>Figma 🔖</a> </p>
