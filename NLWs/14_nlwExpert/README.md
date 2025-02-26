@@ -5,8 +5,17 @@
 <h2>Sobre o projeto:</h2>
 <p>Essa aplicação foi desenvolvida durante o NLW Experts da Rocketseat utilizando React, TypeScript, Tailwind e a SpeechRecognition API.</p>
 <p>- Veja o projeto no <a href='https://www.figma.com/community/file/1336456128647909148/nlw-expert-notes'>Figma 🔖</a> </p>
-<p>- <a href="https://nlw-expert-notes-react-carlos09v.vercel.app" target="_blank">👉🏽 Veja o site aqui 👈🏽</a></p>
-<h3>💜 React - TypeScript - Tailwind - SpeechRecognition API 💜</h3>
+
+<h2>💫 Novidades:</h2>
+<h3>Na Web:</h3>
+<ul>
+    <li>📚 Libs: lucide-react | sooner | date-fns</li>
+</ul>
+
+<div align='center'>
+    <h3><a href="https://nlw-expert-notes-react-carlos09v.vercel.app" target="_blank">👉🏽 Veja o site aqui 👈🏽</a></h3>
+    <h3>🩵 React - TypeScript - TailwindCSS - SpeechRecognition API 🩵</h3>
+</div>
 
 <h1>NLW Expert (Node.js)</h1>
 <div align='center'>

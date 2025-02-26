@@ -11,20 +11,22 @@ Esse é um dos projetos do evento NLW Journey, um dos conteúdos disponíveis pa
 <h3>Instrutores: <a href='https://github.com/diego3g'>Diego Fernandes</a> (ReactJs) e Francisco Isidro (Java)</h3>
 
 <h2>💫 Novidades:</h2>
-<h3>No front:</h3>
+<h3>Na Web:</h3>
 <ul>
-<li>React-hook-form with zod</li>
+<li>📚 Libs: React-hook-form with zod</li>
 <li>Using SSR and Client Component with NextJS</li>
-<li>tailwind-merge</li>
-<li>New Input Component style</li>
-<li>Getting Documentation API return (orval)</li>
+<li>🎛️ New Input Component style</li>
+<li>📖 Getting Documentation API return with orval</li>
 </ul>
-<h3>No back:</h3>
+<h3>No Server:</h3>
 <ul>
 <li>Using JPA Annotations</li>
-<li>Dto and Exception</li>
-<li>Repository/dao folder</li>
-<li>Documentation with Swagger (pendente)</li>
+<li>MVC Concept:</li>
+<ul>
+    <li>Dto and Exception</li>
+    <li>Repository/dao folder</li>
+</ul>
+<li>📖 Documentation with Swagger (pendente)</li>
 </ul>
 
 <h2>Dependências e Tecnologias:</h2>
