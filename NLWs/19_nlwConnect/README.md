@@ -13,7 +13,7 @@ Esse é um dos projetos do evento NLW Journey, um dos conteúdos disponíveis pa
 <h2>💫 Novidades:</h2>
 <h3>Na Web:</h3>
 <ul>
-<li>📚 Libs: React-hook-form with zod</li>
+<li>📚 Libs: React-hook-form with zod | orval</li>
 <li>Using SSR and Client Component with NextJS</li>
 <li>🎛️ New Input Component style</li>
 <li>📖 Getting Documentation API return with orval</li>
@@ -31,6 +31,6 @@ Esse é um dos projetos do evento NLW Journey, um dos conteúdos disponíveis pa
 
 <h2>Dependências e Tecnologias:</h2>
 <h3>💚 Spring Boot - JPA - MySQL 💚</h3>
-<h3>💙 ReactJS - Typescript - Tailwindcss - React-hook-form - zod - orval 💙</h3>
+<h3>🩵 ReactJS - Typescript - Tailwindcss 🩵</h3>
 <p>- Veja o projeto no <a href='https://www.figma.com/community/file/1471119935944492720'>Figma 🔖</a> </p>
 <i>Projeto realizado de 17 a 20 de Fevereiro - 2025</i>

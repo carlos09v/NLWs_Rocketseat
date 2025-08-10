@@ -1,0 +1,46 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
+    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "node --env-file .env --experimental-strip-types --no-warnings src/db/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.12",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-seed": "^0.3.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@fastify/multipart": "^9.0.3",
+    "@google/genai": "^1.13.0",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.4.0",
+    "fastify-type-provider-zod": "^5.0.2",
+    "postgres": "^3.4.7",
+    "zod": "^4.0.0"
+  },
+  "_commands": {
+    "0": "npm i typescript @types/node -D",
+    "1": "tsc --init",
+    "2": "npm i fastify @fastify/cors fastify-type-provider-zod zod",
+    "3": "npm i postgres drizzle-orm",
+    "4": "npm i drizzle-kit drizzle-seed -D",
+    "8": "npm i @fastify/multipart @google/genai",
+    "drizzle": {
+      "5": "npx drizzle-kit generate",
+      "6": "npx drizzle-kit migrate",
+      "7": "npx drizzle-kit studio"
+    }
+  }
+}

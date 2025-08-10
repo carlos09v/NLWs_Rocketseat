@@ -17,6 +17,7 @@ Esse é um dos projetos do evento NLW Pocket, um dos conteúdos disponíveis par
 <h3>No Server:</h3>
 <ul>
     <li>📚 Libs: @paralleldrive/cuid2</li>
+    <li>DrizzleORM</li>
     <li>🐳 Docker com postgres</li>
 </ul>
 <h3>Na Web:</h3>
