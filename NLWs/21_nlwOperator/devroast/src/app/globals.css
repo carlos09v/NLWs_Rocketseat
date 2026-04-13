@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/*
+ * Dark-first design tokens (devroast.pen). All theme colors live in @theme as literals.
+ */
+
+:root {
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-accent: #111111;
+  --color-accent-foreground: #f2f3f0;
+  --color-background: #111111;
+  --color-foreground: #ffffff;
+  --color-border: #2e2e2e;
+  --color-input: #2e2e2e;
+  --color-ring: #666666;
+  --color-muted: #2e2e2e;
+  --color-muted-foreground: #b8b9b6;
+  --color-primary: #ff8400;
+  --color-primary-foreground: #111111;
+  --color-secondary: #2e2e2e;
+  --color-secondary-foreground: #ffffff;
+  --color-destructive: #ff5c33;
+  --color-card: #1a1a1a;
+  --color-card-foreground: #ffffff;
+  --color-popover: #1a1a1a;
+  --color-popover-foreground: #ffffff;
+
+  --color-sidebar: #18181b;
+  --color-sidebar-accent: #2a2a30;
+  --color-sidebar-accent-foreground: #fafafa;
+  --color-sidebar-border: #ffffff1a;
+  --color-sidebar-foreground: #fafafa;
+  --color-sidebar-primary: #18181b;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-ring: #71717a;
+
+  --color-error: #24100b;
+  --color-error-foreground: #ff5c33;
+  --color-info: #222229;
+  --color-info-foreground: #b2b2ff;
+  --color-success: #222924;
+  --color-success-foreground: #b6ffce;
+  --color-warning: #291c0f;
+  --color-warning-foreground: #ff8400;
+
+  --color-amber-accent: #f59e0b;
+  --color-blue-accent: #3b82f6;
+  --color-green-primary: #22c55e;
+  --color-orange-accent: #f97316;
+  --color-red-accent: #ef4444;
+  --color-accent-green: #10b981;
+  --color-accent-red: #ef4444;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-amber: #f59e0b;
+
+  --color-bg-page: #0c0c0c;
+  --color-bg-surface: #171717;
+  --color-bg-elevated: #1a1a1a;
+  --color-layer-bg-input: #111111;
+  --color-layer-page-alt: #0a0a0a;
+  --color-layer-surface-alt: #0f0f0f;
+  --color-border-primary: #1f1f1f;
+  --color-border-secondary: #252525;
+  --color-border-focus: #10b981;
+  --color-border-strong: #2a2a2a;
+  --color-text-muted: #525252;
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+  --color-content-text-primary: #fafafa;
+  --color-content-text-secondary: #6b7280;
+  --color-content-text-tertiary: #4b5563;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-syn-function: #ffc799;
+  --color-syn-keyword: #a0a0a0;
+  --color-syn-number: #ffc799;
+  --color-syn-operator: #a0a0a0;
+  --color-syn-property: #a0a0a0;
+  --color-syn-string: #99ffe4;
+  --color-syn-type: #ffc799;
+  --color-syn-variable: #ffffff;
+
+  --color-diff-removed-bg: #1a0a0a;
+  --color-diff-added-bg: #0a1a0f;
+  --color-diff-removed-code: #6b7280;
+  --color-diff-added-code: #fafafa;
+  --color-diff-context-code: #6b7280;
+  --color-diff-prefix-removed: #ef4444;
+  --color-diff-prefix-added: #10b981;
+  --color-diff-prefix-context: #4b5563;
+
+  --color-score-ring-track: #2a2a2a;
+  --color-score-ring-from: #10b981;
+  --color-score-ring-to: #f59e0b;
+
+  --radius-none: 0px;
+  --radius-md: 16px;
+  --radius-pill: 9999px;
+
+  --spacing-pen-xs: 4px;
+  --spacing-pen-sm: 8px;
+  --spacing-pen-md: 16px;
+  --spacing-pen-lg: 24px;
+  --spacing-pen-xl: 40px;
+}
