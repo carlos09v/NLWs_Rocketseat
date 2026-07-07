@@ -17,3 +17,9 @@
 | #06 | [🤝 NLW Together](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/6_nlwTogether) | - | - |
 
 </div>
+
+<h2>Outros projetos: Maratonas 🚀</h2>
+<ol>
+    <li><a href="https://github.com/carlos09v/NLWs_Rocketseat/tree/main/Maratonas/explorer">Maratona Explorer</a> - (1.0 - 2.0 - 3.0) | <i>(Done in 2022)</i></li>
+    <li><a href="https://github.com/carlos09v/NLWs_Rocketseat/tree/main/Maratonas/discover">Maratona Discover</a> - (Edição 01 e 02) | <i>(Done in 2021)</i></li>
+<ol>
