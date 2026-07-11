@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import { Navbar } from "@/components/layout/navbar";
-import { TRPCProvider } from "@/components/providers/TRPCProvider";
+import { Suspense } from "react";
+import { Navbar } from "@/components/navbar";
+import { TRPCReactProvider } from "@/trpc/client";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "devroast",
-  description: "Get your code roasted.",
+  title: "DevRoast",
+  description: "Paste your code. Get roasted.",
 };
 
 export default function RootLayout({
@@ -20,14 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${jetbrainsMono.variable} bg-background font-sans text-foreground antialiased`}
-      >
-        <TRPCProvider>
-          <Navbar />
-          {children}
-        </TRPCProvider>
+    <html lang="en" className={jetbrainsMono.variable}>
+      <body className="font-sans antialiased">
+        <Suspense>
+          <TRPCReactProvider>
+            <Navbar />
+            {children}
+          </TRPCReactProvider>
+        </Suspense>
       </body>
     </html>
   );

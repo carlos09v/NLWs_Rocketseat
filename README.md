@@ -2,7 +2,8 @@
 
 | NLW | Nome | Trilha | Novo Conteúdo (-/5) |
 |-----|----------------|---------------------------|----------------|
-| #20 | [NLW Agents](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/20_nlwAgents) | React + NodeJS *(-> Mais recente)* | ⭐⭐⭐☆☆ |
+| #21 | [NLW Operator](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/21_nlwOperator) | React + NodeJS + IA *(-> Mais recente)* | ⭐⭐⭐⭐☆ |
+| #20 | [NLW Agents](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/20_nlwAgents) | React + NodeJS | ⭐⭐⭐☆☆ |
 | #19 | [🌐 NLW Connect](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/19_nlwConnect) | React + Java | ⭐⭐⭐☆☆ |
 | #18 | [📱 NLW Pocket Mobile](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/18_nlwPocketMobile) | React Native *(Multiplataforma)* | ⭐⭐⭐⭐☆ |
 | #17 | [🎯 NLW Pocket](https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/17_nlwPocket) | Fullstack *(sem Mobile)* | - |

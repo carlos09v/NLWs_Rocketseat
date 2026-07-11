@@ -1,80 +1,84 @@
-import { tv } from "tailwind-variants";
+import type { ComponentProps } from "react";
+import { twMerge } from "tailwind-merge";
 
-export type ScoreRingProps = {
-  value: number;
-  max?: number;
-  className?: string;
-  /** Unique when multiple rings share one document (SVG gradient id). */
-  gradientId?: string;
+type ScoreRingProps = ComponentProps<"div"> & {
+  score: number;
+  total?: number;
 };
 
-const R = 88;
-const C = 2 * Math.PI * R;
-
-function formatScore(value: number) {
-  return Number.isInteger(value) ? String(value) : value.toFixed(1);
+function scoreGradientId(score: number) {
+  return `score-gradient-${score.toString().replace(".", "-")}`;
 }
 
-const scoreRingVariants = tv({
-  base: "relative inline-flex size-45 items-center justify-center",
-});
+const SIZE = 180;
 
-export function ScoreRing({
-  value,
-  max = 10,
-  className,
-  gradientId = "score-ring-gradient",
-}: ScoreRingProps) {
-  const pct = Math.min(1, Math.max(0, value / max));
-  const dash = pct * C;
-
-  const label = `Score ${formatScore(value)} out of ${max}`;
+function ScoreRing({ score, total = 10, className, ...props }: ScoreRingProps) {
+  const strokeWidth = 4;
+  const radius = (SIZE - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const ratio = Math.min(score / total, 1);
+  const filled = circumference * ratio;
+  const gap = circumference - filled;
+  const gradientId = scoreGradientId(score);
 
   return (
     <div
-      role="img"
-      aria-label={label}
-      className={scoreRingVariants({ className })}
+      className={twMerge(
+        "relative inline-flex items-center justify-center",
+        className,
+      )}
+      style={{ width: SIZE, height: SIZE }}
+      {...props}
     >
       <svg
-        className="absolute inset-0 size-full -rotate-90"
-        viewBox="0 0 180 180"
-        aria-hidden
+        width={SIZE}
+        height={SIZE}
+        viewBox={`0 0 ${SIZE} ${SIZE}`}
+        className="absolute inset-0 -rotate-90"
+        role="img"
+        aria-label={`Score: ${score} out of ${total}`}
       >
-        <title>{label}</title>
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="var(--color-score-ring-from)" />
-            <stop offset="100%" stopColor="var(--color-score-ring-to)" />
+            <stop offset="0%" stopColor="var(--color-accent-green)" />
+            <stop offset="100%" stopColor="var(--color-accent-amber)" />
           </linearGradient>
         </defs>
+
+        {/* Background ring */}
         <circle
-          cx="90"
-          cy="90"
-          r={R}
+          cx={SIZE / 2}
+          cy={SIZE / 2}
+          r={radius}
           fill="none"
-          stroke="var(--color-score-ring-track)"
-          strokeWidth="4"
+          stroke="var(--color-border-primary)"
+          strokeWidth={strokeWidth}
         />
+
+        {/* Score arc */}
         <circle
-          cx="90"
-          cy="90"
-          r={R}
+          cx={SIZE / 2}
+          cy={SIZE / 2}
+          r={radius}
           fill="none"
           stroke={`url(#${gradientId})`}
-          strokeWidth="4"
+          strokeWidth={strokeWidth}
+          strokeDasharray={`${filled} ${gap}`}
           strokeLinecap="round"
-          strokeDasharray={`${dash} ${C}`}
         />
       </svg>
-      <div className="relative z-10 flex items-baseline gap-0.5">
-        <span className="font-mono text-5xl font-bold leading-none tracking-tight text-content-text-primary">
-          {formatScore(value)}
+
+      {/* Center score */}
+      <div className="flex items-end gap-0.5">
+        <span className="font-mono text-5xl font-bold text-text-primary leading-none">
+          {score % 1 === 0 ? score.toFixed(1) : score.toString()}
         </span>
-        <span className="font-mono text-base font-normal text-content-text-tertiary">
-          /{max}
+        <span className="font-mono text-base text-text-tertiary leading-none mb-1">
+          /{total}
         </span>
       </div>
     </div>
   );
 }
+
+export { ScoreRing, type ScoreRingProps };

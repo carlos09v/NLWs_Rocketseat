@@ -1,170 +1,170 @@
-import { tv } from "tailwind-variants";
+import type { Metadata } from "next";
+import type { BundledLanguage } from "shiki";
 import {
-  AnalysisCardBadge,
   AnalysisCardDescription,
   AnalysisCardRoot,
   AnalysisCardTitle,
-  Button,
-  CodeBlock,
-  DiffBlockCode,
-  DiffBlockPrefix,
-  DiffBlockRoot,
-  DiffBlockRow,
-  ScoreRing,
-} from "@/components/ui";
+} from "@/components/ui/analysis-card";
+import { Badge } from "@/components/ui/badge";
+import { CodeBlock } from "@/components/ui/code-block";
+import { DiffLine } from "@/components/ui/diff-line";
+import { ScoreRing } from "@/components/ui/score-ring";
+import { caller } from "@/trpc/server";
 
-const pageVariants = tv({
-  slots: {
-    main: "mx-auto w-full max-w-320 space-y-10 px-6 py-10",
-    scoreHero: "flex flex-row items-center justify-center gap-12",
-    shareRow: "mt-4 flex justify-center",
-    divider: "h-px w-full bg-border-primary",
-    codeSection: "space-y-4",
-    codeTitle: "flex items-center gap-2 font-mono text-sm font-bold",
-  },
-});
-
-export default function RoastPage({
-  params: { id },
+export async function generateMetadata({
+  params,
 }: {
-  params: { id: string };
-}) {
-  const { main, scoreHero, shareRow, divider, codeSection, codeTitle } =
-    pageVariants();
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const roast = await caller.roast.getById({ id });
 
-  // Static data as requested
-  const roastData = {
-    score: 3.5,
-    verdict: "critical", // Mapped to AnalysisCardBadge status
-    verdictText: "needs_serious_help",
-    title:
-      '"this code looks like it was written during a power outage... in 2005."',
-    lang: "javascript",
-    lines: 7,
-    code: `function calculateTotal(items) {
-  var total = 0;
-  for (var i = 0; i < items.length; i++) {
-    total = total + items[i].price;
-  }
-  if (total > 100) {
-    console.log("discount applied");
-    total = total * 0.9;
-  }
-  return total;
-}`,
-    analysis: [
-      {
-        id: "sec-1",
-        title: "using var instead of const/let",
-        description:
-          "The use of 'var' is outdated. Switch to 'let' or 'const' to avoid hoisting issues and ensure block-scoping.",
-        status: "critical",
-      },
-      {
-        id: "time-1",
-        title: "O(n) complexity in simple loop",
-        description:
-          "The current implementation uses a simple for-loop, which is O(n). While acceptable for small lists, consider using a reduce function for better readability.",
-        status: "warning",
-      },
-      {
-        id: "cor-1",
-        title: "correct logic implementation",
-        description:
-          "The logic correctly handles the discount application and returns the expected total.",
-        status: "good",
-      },
-      {
-        id: "name-1",
-        title: "clear naming conventions",
-        description:
-          "Variable names like 'total' and 'items' are clear and follow standard conventions.",
-        status: "good",
-      },
-    ],
-    suggestedFix: [
-      {
-        id: "fix-1",
-        kind: "context",
-        content: "function calculateTotal(items) {",
-      },
-      { id: "fix-2", kind: "removed", content: "  var total = 0;" },
-      { id: "fix-3", kind: "added", content: "  let total = 0;" },
-      {
-        id: "fix-4",
-        kind: "removed",
-        content: "  for (var i = 0; i < items.length; i++) {",
-      },
-      {
-        id: "fix-5",
-        kind: "added",
-        content: "  for (let i = 0; i < items.length; i++) {",
-      },
-      {
-        id: "fix-6",
-        kind: "context",
-        content: "    total = total + items[i].price;",
-      },
-      { id: "fix-7", kind: "context", content: "  }" },
-      { id: "fix-8", kind: "context", content: "  if (total > 100) {" },
-      {
-        id: "fix-9",
-        kind: "context",
-        content: '    console.log("discount applied");',
-      },
-      { id: "fix-10", kind: "context", content: "    total = total * 0.9;" },
-      { id: "fix-11", kind: "context", content: "  }" },
-      { id: "fix-12", kind: "context", content: "  return total;" },
-      { id: "fix-13", kind: "context", content: "}" },
-    ],
+  const title = `${roast.score.toFixed(1)}/10 — ${roast.language} Roast — DevRoast`;
+  const description =
+    roast.roastQuote ?? "See how your code scored on DevRoast.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title: `${roast.score.toFixed(1)}/10 — ${roast.language} Roast`,
+      description,
+      images: [
+        {
+          url: `/roast/${id}/opengraph-image`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${roast.score.toFixed(1)}/10 — ${roast.language} Roast`,
+      description,
+    },
   };
+}
+
+const verdictToBadgeVariant = {
+  needs_serious_help: "critical",
+  rough_around_edges: "critical",
+  decent_code: "warning",
+  solid_work: "good",
+  exceptional: "good",
+} as const;
+
+type DiffLineType = "added" | "removed" | "context";
+
+function computeDiffLines(
+  original: string,
+  suggested: string,
+): Array<{ type: DiffLineType; content: string }> {
+  const originalLines = original.split("\n");
+  const suggestedLines = suggested.split("\n");
+  const lines: Array<{ type: DiffLineType; content: string }> = [];
+
+  const maxLen = Math.max(originalLines.length, suggestedLines.length);
+
+  for (let i = 0; i < maxLen; i++) {
+    const orig = originalLines[i];
+    const sugg = suggestedLines[i];
+
+    if (orig === sugg) {
+      lines.push({ type: "context", content: orig ?? "" });
+    } else {
+      if (orig !== undefined) {
+        lines.push({ type: "removed", content: orig });
+      }
+      if (sugg !== undefined) {
+        lines.push({ type: "added", content: sugg });
+      }
+    }
+  }
+
+  return lines;
+}
+
+export default async function RoastResultPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const roast = await caller.roast.getById({ id });
+
+  const badgeVariant = verdictToBadgeVariant[roast.verdict];
+  const diffLines = roast.suggestedFix
+    ? computeDiffLines(roast.code, roast.suggestedFix)
+    : [];
 
   return (
-    <div className="min-h-screen bg-background">
-      <main className={main()}>
-        <section className={scoreHero()}>
-          <ScoreRing value={roastData.score} />
+    <main className="flex flex-col w-full">
+      <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-10 md:px-20 py-10">
+        {/* Score Hero */}
+        <section className="flex items-center gap-12">
+          <ScoreRing score={roast.score} />
 
-          <div className="flex flex-col gap-4">
-            <AnalysisCardRoot>
-              <AnalysisCardBadge status={roastData.verdict as any}>
-                {roastData.verdictText}
-              </AnalysisCardBadge>
-              <AnalysisCardTitle>{roastData.title}</AnalysisCardTitle>
-              <AnalysisCardDescription>
-                lang: {roastData.lang} · {roastData.lines} lines
-              </AnalysisCardDescription>
-            </AnalysisCardRoot>
+          <div className="flex flex-col gap-4 flex-1">
+            <Badge variant={badgeVariant}>verdict: {roast.verdict}</Badge>
 
-            <div className={shareRow()}>
-              <Button variant="outline" size="sm">
-                $ share_roast
-              </Button>
+            <p className="font-mono text-xl leading-relaxed text-text-primary">
+              {roast.roastQuote
+                ? `"${roast.roastQuote}"`
+                : "No quote available."}
+            </p>
+
+            <div className="flex items-center gap-4">
+              <span className="font-mono text-xs text-text-tertiary">
+                lang: {roast.language}
+              </span>
+              <span className="font-mono text-xs text-text-tertiary">
+                {"·"}
+              </span>
+              <span className="font-mono text-xs text-text-tertiary">
+                {roast.lineCount} lines
+              </span>
             </div>
           </div>
         </section>
 
-        <section className={codeSection()}>
-          <div className={codeTitle()}>
-            <span className="text-accent-green">{"//"}</span>
-            <span className="text-foreground">your_submission</span>
+        {/* Divider */}
+        <hr className="border-border-primary" />
+
+        {/* Submitted Code Section */}
+        <section className="flex flex-col gap-4">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-sm font-bold text-accent-green">
+              {"//"}
+            </span>
+            <h2 className="font-mono text-sm font-bold text-text-primary">
+              your_submission
+            </h2>
           </div>
+
           <CodeBlock
-            code={roastData.code}
-            lang={roastData.lang as any}
-            filename={`${roastData.lang}.js`}
+            code={roast.code}
+            lang={roast.language as BundledLanguage}
           />
         </section>
 
-        <section className="space-y-6">
-          <div className={codeTitle()}>
-            <span className="text-accent-green">{"//"}</span>
-            <span className="text-foreground">detailed_analysis</span>
+        {/* Divider */}
+        <hr className="border-border-primary" />
+
+        {/* Detailed Analysis Section */}
+        <section className="flex flex-col gap-6">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-sm font-bold text-accent-green">
+              {"//"}
+            </span>
+            <h2 className="font-mono text-sm font-bold text-text-primary">
+              detailed_analysis
+            </h2>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {roastData.analysis.map((item) => (
+            {roast.analysisItems.map((item) => (
               <AnalysisCardRoot key={item.id}>
-                <AnalysisCardBadge status={item.status as any} />
+                <Badge variant={item.severity}>{item.severity}</Badge>
                 <AnalysisCardTitle>{item.title}</AnalysisCardTitle>
                 <AnalysisCardDescription>
                   {item.description}
@@ -174,25 +174,43 @@ export default function RoastPage({
           </div>
         </section>
 
-        <div className={divider()} />
+        {/* Suggested Fix Section */}
+        {diffLines.length > 0 && (
+          <>
+            {/* Divider */}
+            <hr className="border-border-primary" />
 
-        <section className="space-y-4">
-          <div className={codeTitle()}>
-            <span className="text-accent-green">{"//"}</span>
-            <span className="text-foreground">suggested_fix</span>
-          </div>
-          <DiffBlockRoot filename="your_code.js → improved_code.js">
-            {roastData.suggestedFix.map((row) => (
-              <DiffBlockRow key={row.id} kind={row.kind as any}>
-                <DiffBlockPrefix kind={row.kind as any} />
-                <DiffBlockCode kind={row.kind as any}>
-                  {row.content}
-                </DiffBlockCode>
-              </DiffBlockRow>
-            ))}
-          </DiffBlockRoot>
-        </section>
-      </main>
-    </div>
+            <section className="flex flex-col gap-6">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-sm font-bold text-accent-green">
+                  {"//"}
+                </span>
+                <h2 className="font-mono text-sm font-bold text-text-primary">
+                  suggested_fix
+                </h2>
+              </div>
+
+              <div className="border border-border-primary bg-bg-input overflow-hidden">
+                {/* Diff Header */}
+                <div className="flex items-center gap-2 h-10 px-4 border-b border-border-primary">
+                  <span className="font-mono text-xs font-medium text-text-secondary">
+                    your_code.{roast.language} → improved_code.{roast.language}
+                  </span>
+                </div>
+
+                {/* Diff Body */}
+                <div className="flex flex-col py-1">
+                  {diffLines.map((line, i) => (
+                    <DiffLine key={`diff-${i.toString()}`} type={line.type}>
+                      {line.content}
+                    </DiffLine>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+      </div>
+    </main>
   );
 }

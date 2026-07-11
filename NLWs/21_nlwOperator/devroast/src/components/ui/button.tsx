@@ -1,103 +1,57 @@
 import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
-export const buttonVariants = tv({
-  base: "inline-flex items-center justify-center font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+const button = tv({
+  base: [
+    "inline-flex items-center justify-center gap-2",
+    "font-mono font-medium cursor-pointer",
+    "transition-colors duration-150",
+    "disabled:opacity-50 disabled:cursor-not-allowed",
+  ],
   variants: {
     variant: {
-      primary:
-        "bg-accent-green font-medium hover:brightness-110 active:brightness-95",
-      secondary:
-        "border border-border-strong bg-transparent text-foreground font-normal text-xs py-2 px-4 hover:bg-muted/30",
-      link: "border border-border-strong bg-transparent font-normal text-xs py-1.5 px-3 text-content-text-secondary hover:text-foreground",
-      outline:
-        "border border-border-strong bg-transparent text-foreground font-normal text-xs py-2 px-4 hover:bg-muted/30",
-      ghost:
-        "border border-transparent bg-transparent text-foreground font-normal hover:bg-muted/30",
-      destructive:
-        "border border-transparent bg-destructive text-white font-medium hover:brightness-110 active:brightness-95",
+      primary: [
+        "bg-accent-green text-bg-page",
+        "enabled:hover:bg-green-primary",
+        "enabled:active:bg-accent-green/80",
+      ],
+      secondary: [
+        "bg-transparent text-text-primary",
+        "border border-border-primary",
+        "enabled:hover:bg-bg-elevated",
+        "enabled:active:bg-bg-surface",
+      ],
+      ghost: [
+        "bg-transparent text-text-secondary",
+        "border border-border-primary",
+        "enabled:hover:text-text-primary",
+        "enabled:hover:bg-bg-elevated",
+        "enabled:active:bg-bg-surface",
+      ],
+      danger: [
+        "bg-accent-red text-white",
+        "enabled:hover:bg-destructive",
+        "enabled:active:bg-accent-red/80",
+      ],
     },
     size: {
-      sm: "",
-      default: "",
-      lg: "",
+      sm: "px-3 py-1.5 text-xs",
+      md: "px-4 py-2 text-xs",
+      lg: "px-6 py-2.5 text-[13px]",
     },
   },
-  compoundVariants: [
-    {
-      variant: "primary",
-      size: "sm",
-      class: "gap-1.5 py-1.5 px-3 text-xs text-background",
-    },
-    {
-      variant: "primary",
-      size: "default",
-      class: "gap-2 py-2.5 px-6 text-13 text-background",
-    },
-    {
-      variant: "primary",
-      size: "lg",
-      class: "gap-2.5 py-3 px-8 text-sm text-background",
-    },
-    {
-      variant: "ghost",
-      size: "sm",
-      class: "gap-1.5 py-1.5 px-3 text-xs",
-    },
-    {
-      variant: "ghost",
-      size: "default",
-      class: "gap-2 py-2.5 px-6 text-13",
-    },
-    {
-      variant: "ghost",
-      size: "lg",
-      class: "gap-2.5 py-3 px-8 text-sm",
-    },
-    {
-      variant: "destructive",
-      size: "sm",
-      class: "gap-1.5 py-1.5 px-3 text-xs",
-    },
-    {
-      variant: "destructive",
-      size: "default",
-      class: "gap-2 py-2.5 px-6 text-13",
-    },
-    {
-      variant: "destructive",
-      size: "lg",
-      class: "gap-2.5 py-3 px-8 text-sm",
-    },
-  ],
   defaultVariants: {
     variant: "primary",
-    size: "default",
+    size: "lg",
   },
 });
 
-export type ButtonProps = ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    showPrefix?: boolean;
-  };
+type ButtonVariants = VariantProps<typeof button>;
 
-export function Button({
-  className,
-  variant,
-  size,
-  type = "button",
-  showPrefix = true,
-  children,
-  ...props
-}: ButtonProps) {
-  return (
-    <button
-      type={type}
-      className={buttonVariants({ variant, size, className })}
-      {...props}
-    >
-      {showPrefix && "$ "}
-      {children}
-    </button>
-  );
+type ButtonProps = ComponentProps<"button"> & ButtonVariants;
+
+function Button({ variant, size, className, ...props }: ButtonProps) {
+  return <button className={button({ variant, size, className })} {...props} />;
 }
+
+export { Button, button, type ButtonProps, type ButtonVariants };

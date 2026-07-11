@@ -1,22 +1,28 @@
 <h1>NLW Operator</h1>
+
 <div align='center'>
-    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/21_nlwOperator/devroast/src/assets/home.jpg?raw=true" alt="NLW_Operator_Home">
-    <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/21_nlwOperator/devroast/src/assets/analysis.jpg?raw=true" alt="NLW_Operator_Analysis">
+        <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/21_nlwOperator/devroast/src/assets/home.jpg?raw=true" alt="NLW_Operator_Home">
+        <img height='500' src="https://github.com/carlos09v/NLWs_Rocketseat/blob/main/NLWs/21_nlwOperator/devroast/src/assets/analysis.jpg?raw=true" alt="NLW_Operator_Analysis">
 </div>
 
 <h2>Trilha FullStack</h2>
-<p>O projeto é para </p>
+<p>
+    <a href="https://github.com/carlos09v/NLWs_Rocketseat/tree/main/NLWs/21_nlwOperator/devroast">
+        Sobre o DevRoast
+    </a>
+</p>
 
 <h3>Instrutores: <a href='https://github.com/diego3g'>Diego Fernandes</a></h3>
 
 <h2>💫 Novidades:</h2>
 <h3>-> OpenCode</h3>
 
-<h3>Na Web:</h3>
+<h3>Na Web</h3>
 <ul>
-<li>📚 Libs: highlight.js - Shiki - Number flow</li>
+    <li>📚 Libs: Shiki, highlight.js, NumberFlow, Base UI</li>
 </ul>
-<h3>No Server:</h3>
+
+<h3>No Server</h3>
 <ul>
 <li>tRPC</li>
 </ul>

@@ -1,5 +1,5 @@
 {
-  "version": "2.11",
+  "version": "2.14",
   "children": [
     {
       "type": "frame",
@@ -19,13 +19,11 @@
           "width": "fill_container",
           "height": 56,
           "fill": "$bg-page",
-          "stroke": {
-            "align": "inside",
-            "thickness": {
-              "bottom": 1
-            },
-            "fill": "$border-primary"
+          "stroke": "$border-primary",
+          "strokeWidth": {
+            "bottom": 1
           },
+          "strokeAlignment": "inner",
           "padding": [
             0,
             40
@@ -155,11 +153,9 @@
               "width": 780,
               "height": 360,
               "fill": "$bg-input",
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "$border-primary"
-              },
+              "stroke": "$border-primary",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "layout": "vertical",
               "children": [
                 {
@@ -168,13 +164,11 @@
                   "name": "Window Header",
                   "width": "fill_container",
                   "height": 40,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": {
-                      "bottom": 1
-                    },
-                    "fill": "$border-primary"
+                  "stroke": "$border-primary",
+                  "strokeWidth": {
+                    "bottom": 1
                   },
+                  "strokeAlignment": "inner",
                   "padding": [
                     0,
                     16
@@ -230,13 +224,11 @@
                       "width": 48,
                       "height": "fill_container",
                       "fill": "$bg-surface",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "right": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "right": 1
                       },
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 8,
                       "padding": [
@@ -1401,11 +1393,9 @@
                       "type": "frame",
                       "id": "5ji8B",
                       "name": "viewAllLink",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "gap": 4,
                       "padding": [
                         6,
@@ -1442,11 +1432,9 @@
                   "id": "Qiytz",
                   "name": "Leaderboard Table Preview",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -1456,13 +1444,11 @@
                       "width": "fill_container",
                       "height": 40,
                       "fill": "$bg-surface",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -1548,13 +1534,11 @@
                       "id": "0heVG",
                       "name": "Row 1",
                       "width": "fill_container",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         16,
                         20
@@ -1661,13 +1645,11 @@
                       "id": "i7XXx",
                       "name": "Row 2",
                       "width": "fill_container",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         16,
                         20
@@ -1921,13 +1903,11 @@
           "width": "fill_container",
           "height": 56,
           "fill": "$bg-page",
-          "stroke": {
-            "align": "inside",
-            "thickness": {
-              "bottom": 1
-            },
-            "fill": "$border-primary"
+          "stroke": "$border-primary",
+          "strokeWidth": {
+            "bottom": 1
           },
+          "strokeAlignment": "inner",
           "padding": [
             0,
             40
@@ -2022,11 +2002,9 @@
                       "fill": "transparent",
                       "width": 180,
                       "height": 180,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 4,
-                        "fill": "$border-primary"
-                      }
+                      "stroke": "$border-primary",
+                      "strokeWidth": 4,
+                      "strokeAlignment": "inner"
                     },
                     {
                       "type": "ellipse",
@@ -2038,33 +2016,31 @@
                       "width": 180,
                       "height": 180,
                       "stroke": {
-                        "align": "inside",
-                        "thickness": 4,
-                        "fill": {
-                          "type": "gradient",
-                          "gradientType": "angular",
-                          "enabled": true,
-                          "rotation": 0,
-                          "size": {
-                            "width": 1,
-                            "height": 1
+                        "type": "gradient",
+                        "gradientType": "angular",
+                        "enabled": true,
+                        "rotation": 0,
+                        "size": {
+                          "width": 1,
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "$accent-red",
+                            "position": 0
                           },
-                          "colors": [
-                            {
-                              "color": "$accent-red",
-                              "position": 0
-                            },
-                            {
-                              "color": "$accent-amber",
-                              "position": 0.35
-                            },
-                            {
-                              "color": "$accent-green",
-                              "position": 0.35
-                            }
-                          ]
-                        }
-                      }
+                          {
+                            "color": "$accent-amber",
+                            "position": 0.35
+                          },
+                          {
+                            "color": "$accent-green",
+                            "position": 0.35
+                          }
+                        ]
+                      },
+                      "strokeWidth": 4,
+                      "strokeAlignment": "inner"
                     },
                     {
                       "type": "text",
@@ -2190,11 +2166,9 @@
                           "type": "frame",
                           "id": "rhpFt",
                           "name": "shareBtn",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$border-primary"
-                          },
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             8,
@@ -2273,11 +2247,9 @@
                   "width": "fill_container",
                   "height": 424,
                   "fill": "$bg-input",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "children": [
                     {
                       "type": "frame",
@@ -2293,13 +2265,11 @@
                           "width": 48,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 8,
                           "padding": [
@@ -3338,11 +3308,9 @@
                           "id": "D8yTM",
                           "name": "Issue Card 1",
                           "width": "fill_container",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$border-primary"
-                          },
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 12,
                           "padding": 20,
@@ -3404,11 +3372,9 @@
                           "id": "xG9Dh",
                           "name": "Issue Card 2",
                           "width": "fill_container",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$border-primary"
-                          },
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 12,
                           "padding": 20,
@@ -3479,11 +3445,9 @@
                           "id": "tiyYO",
                           "name": "Issue Card 3",
                           "width": "fill_container",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$border-primary"
-                          },
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 12,
                           "padding": 20,
@@ -3545,11 +3509,9 @@
                           "id": "QMg2p",
                           "name": "Issue Card 4",
                           "width": "fill_container",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$border-primary"
-                          },
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 12,
                           "padding": 20,
@@ -3663,11 +3625,9 @@
                   "name": "Diff Block",
                   "width": "fill_container",
                   "fill": "$bg-input",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -3676,13 +3636,11 @@
                       "name": "diffHeader",
                       "width": "fill_container",
                       "height": 40,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "gap": 8,
                       "padding": [
                         0,
@@ -4144,13 +4102,11 @@
           "name": "navbar",
           "width": "fill_container",
           "height": 56,
-          "stroke": {
-            "align": "inside",
-            "thickness": {
-              "bottom": 1
-            },
-            "fill": "$border-primary"
+          "stroke": "$border-primary",
+          "strokeWidth": {
+            "bottom": 1
           },
+          "strokeAlignment": "inner",
           "padding": [
             0,
             40
@@ -4320,11 +4276,9 @@
                   "id": "oKASC",
                   "name": "Entry 1",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -4333,13 +4287,11 @@
                       "name": "Meta Row",
                       "width": "fill_container",
                       "height": 48,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -4453,11 +4405,9 @@
                       "width": "fill_container",
                       "height": 120,
                       "fill": "$bg-input",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "children": [
                         {
                           "type": "frame",
@@ -4466,13 +4416,11 @@
                           "width": 40,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 6,
                           "padding": [
@@ -4677,11 +4625,9 @@
                   "id": "5p0ST",
                   "name": "Entry 2",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -4690,13 +4636,11 @@
                       "name": "Meta Row 2",
                       "width": "fill_container",
                       "height": 48,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -4810,11 +4754,9 @@
                       "width": "fill_container",
                       "height": 120,
                       "fill": "$bg-input",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "children": [
                         {
                           "type": "frame",
@@ -4823,13 +4765,11 @@
                           "width": 40,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 6,
                           "padding": [
@@ -5154,11 +5094,9 @@
                   "id": "MZMvO",
                   "name": "Entry 3",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -5167,13 +5105,11 @@
                       "name": "Meta Row 3",
                       "width": "fill_container",
                       "height": 48,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -5287,11 +5223,9 @@
                       "width": "fill_container",
                       "height": 120,
                       "fill": "$bg-input",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "children": [
                         {
                           "type": "frame",
@@ -5300,13 +5234,11 @@
                           "width": 40,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 6,
                           "padding": [
@@ -5464,11 +5396,9 @@
                   "id": "o5Ru6",
                   "name": "Entry 4",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -5477,13 +5407,11 @@
                       "name": "Meta Row 4",
                       "width": "fill_container",
                       "height": 48,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -5597,11 +5525,9 @@
                       "width": "fill_container",
                       "height": 120,
                       "fill": "$bg-input",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "children": [
                         {
                           "type": "frame",
@@ -5610,13 +5536,11 @@
                           "width": 40,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 6,
                           "padding": [
@@ -5761,11 +5685,9 @@
                   "id": "4kRIc",
                   "name": "Entry 5",
                   "width": "fill_container",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -5774,13 +5696,11 @@
                       "name": "Meta Row 5",
                       "width": "fill_container",
                       "height": 48,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "bottom": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "bottom": 1
                       },
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         20
@@ -5894,11 +5814,9 @@
                       "width": "fill_container",
                       "height": 120,
                       "fill": "$bg-input",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-primary"
-                      },
+                      "stroke": "$border-primary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "children": [
                         {
                           "type": "frame",
@@ -5907,13 +5825,11 @@
                           "width": 40,
                           "height": "fill_container",
                           "fill": "$bg-surface",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": {
-                              "right": 1
-                            },
-                            "fill": "$border-primary"
+                          "stroke": "$border-primary",
+                          "strokeWidth": {
+                            "right": 1
                           },
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 6,
                           "padding": [
@@ -6199,11 +6115,9 @@
       "width": 1200,
       "height": 630,
       "fill": "$bg-page",
-      "stroke": {
-        "align": "inside",
-        "thickness": 1,
-        "fill": "$border-primary"
-      },
+      "stroke": "$border-primary",
+      "strokeWidth": 1,
+      "strokeAlignment": "inner",
       "children": [
         {
           "type": "frame",
@@ -6569,11 +6483,9 @@
                   "type": "frame",
                   "id": "ncXCW",
                   "name": "secondaryBtn",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "padding": [
                     8,
                     16
@@ -6595,11 +6507,9 @@
                   "type": "frame",
                   "id": "8iINU",
                   "name": "linkBtn",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-primary"
-                  },
+                  "stroke": "$border-primary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "padding": [
                     6,
                     12
@@ -6948,11 +6858,9 @@
               "id": "mxPzk",
               "name": "analysisCard",
               "width": 480,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "$border-primary"
-              },
+              "stroke": "$border-primary",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "layout": "vertical",
               "gap": 12,
               "padding": 20,
@@ -7054,11 +6962,9 @@
               "name": "codeEditor",
               "width": 560,
               "fill": "$bg-input",
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "$border-primary"
-              },
+              "stroke": "$border-primary",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "layout": "vertical",
               "children": [
                 {
@@ -7067,13 +6973,11 @@
                   "name": "codeHeader",
                   "width": "fill_container",
                   "height": 40,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": {
-                      "bottom": 1
-                    },
-                    "fill": "$border-primary"
+                  "stroke": "$border-primary",
+                  "strokeWidth": {
+                    "bottom": 1
                   },
+                  "strokeAlignment": "inner",
                   "gap": 12,
                   "padding": [
                     0,
@@ -7137,13 +7041,11 @@
                       "width": 40,
                       "height": "fill_container",
                       "fill": "$bg-surface",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": {
-                          "right": 1
-                        },
-                        "fill": "$border-primary"
+                      "stroke": "$border-primary",
+                      "strokeWidth": {
+                        "right": 1
                       },
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 6,
                       "padding": [
@@ -7587,13 +7489,11 @@
               "id": "0SI58",
               "name": "leaderboardRow",
               "width": "fill_container",
-              "stroke": {
-                "align": "inside",
-                "thickness": {
-                  "bottom": 1
-                },
-                "fill": "$border-primary"
+              "stroke": "$border-primary",
+              "strokeWidth": {
+                "bottom": 1
               },
+              "strokeAlignment": "inner",
               "gap": 24,
               "padding": [
                 16,
@@ -7721,13 +7621,11 @@
               "width": "fill_container",
               "height": 56,
               "fill": "$bg-page",
-              "stroke": {
-                "align": "inside",
-                "thickness": {
-                  "bottom": 1
-                },
-                "fill": "$border-primary"
+              "stroke": "$border-primary",
+              "strokeWidth": {
+                "bottom": 1
               },
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 24
@@ -7837,11 +7735,9 @@
                   "name": "outerRing",
                   "width": 180,
                   "height": 180,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 4,
-                    "fill": "$border-primary"
-                  }
+                  "stroke": "$border-primary",
+                  "strokeWidth": 4,
+                  "strokeAlignment": "inner"
                 },
                 {
                   "type": "ellipse",
@@ -7853,33 +7749,31 @@
                   "width": 180,
                   "height": 180,
                   "stroke": {
-                    "align": "inside",
-                    "thickness": 4,
-                    "fill": {
-                      "type": "gradient",
-                      "gradientType": "angular",
-                      "enabled": true,
-                      "rotation": 0,
-                      "size": {
-                        "width": 1,
-                        "height": 1
+                    "type": "gradient",
+                    "gradientType": "angular",
+                    "enabled": true,
+                    "rotation": 0,
+                    "size": {
+                      "width": 1,
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "$accent-green",
+                        "position": 0
                       },
-                      "colors": [
-                        {
-                          "color": "$accent-green",
-                          "position": 0
-                        },
-                        {
-                          "color": "$accent-amber",
-                          "position": 0.35
-                        },
-                        {
-                          "color": "transparent",
-                          "position": 0.36
-                        }
-                      ]
-                    }
-                  }
+                      {
+                        "color": "$accent-amber",
+                        "position": 0.35
+                      },
+                      {
+                        "color": "transparent",
+                        "position": 0.36
+                      }
+                    ]
+                  },
+                  "strokeWidth": 4,
+                  "strokeAlignment": "inner"
                 },
                 {
                   "type": "frame",
@@ -8659,5 +8553,6 @@
         }
       ]
     }
-  }
+  },
+  "fileToken": "9d7b44d4-7fe5-4f8e-9071-db398e456677"
 }
